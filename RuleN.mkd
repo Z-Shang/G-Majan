@@ -1,0 +1,8 @@
+Rule of Japanese Riichi Mahjong
+=
+---
+赤ドラ: 3
+開始: 25000
+原点: 30000
+一本場: 300 pt
+樌ドラ: あり
