@@ -31,11 +31,17 @@ main ( int argc, char *argv[] )
 {
     gtk_init(&argc, &argv);
     GtkWidget *win_main = gtk_window_new(GTK_WINDOW_TOPLEVEL);
+    GtkWidget *title_bg = gtk_image_new_from_file("res/title.png");
+
     gtk_window_set_title(GTK_WINDOW(win_main), "G-Maa-Jan");
+    gtk_window_set_default_size(GTK_WINDOW(win_main), 1200, 675);
+    gtk_window_set_position(GTK_WINDOW(win_main), GTK_WIN_POS_CENTER);
+
+    gtk_container_add(GTK_CONTAINER(win_main), title_bg);
 
     g_signal_connect(win_main, "destroy", G_CALLBACK(gtk_main_quit), NULL);
 
-    gtk_widget_show(win_main);
+    gtk_widget_show_all(win_main);
 
     gtk_main();
     return 0;
