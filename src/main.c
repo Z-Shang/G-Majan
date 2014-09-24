@@ -17,6 +17,7 @@
  */
 
 #include <gtk/gtk.h>
+#include <ecl/ecl.h>
 #include <stdlib.h>
 #include <stdio.h>
 
