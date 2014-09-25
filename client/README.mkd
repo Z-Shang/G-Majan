@@ -1,0 +1,4 @@
+Client of GMahjong
+=
+---
+The graphic client of GMahjong

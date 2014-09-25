@@ -1,0 +1,4 @@
+Base of GMahjong
+=
+---
+Contains the base of GMahjong, including rules and modules.

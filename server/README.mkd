@@ -1,0 +1,4 @@
+Server of GMahjong
+=
+---
+Server of GMahjong for online playing 

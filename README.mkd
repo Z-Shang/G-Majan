@@ -1,4 +1,4 @@
 G-MaJan
 =
 ---
-A real Mahjong game (Japanese Riichi Mahjong 日本リーチ麻雀 and Chinese National Standard Mahjong 中国国标麻将) for Gnome, online competition is avaliable.
+A real Mahjong game (Japanese Riichi Mahjong 日本リーチ麻雀 and Chinese National Standard Mahjong 中国国标麻将) written in Racket, online competition is avaliable.

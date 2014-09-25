@@ -7,7 +7,7 @@
            game-mode 
            set-game-mode
            hai
-
+           init-yama
            )
 
   (define aka-dora #t)
@@ -34,7 +34,14 @@
           )
   
   (define init-yama 
-    (lambda () 'INIT-YAMA)
-    )
-
-  )
+    (lambda () 
+      (cond
+        ((eq? game-mode 'NRM)       ;;136
+         ;NRM
+         
+         )
+        ((eq? game-mode 'CNSM)      ;;144
+         'CNSM
+         )
+        (#t 
+         (printf "No matching game mode!"))))))
