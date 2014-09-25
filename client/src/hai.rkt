@@ -29,7 +29,7 @@
           ;; For Suushii: 1~4 are : Ton Nan Shaa Pei
           ;; For Sangen: 1~3 are : Haku Hatsu Chun      NRM （白 发 中）
           ;; For Sangen: 1~3 are : Chun Hatsu Haku      CNSM（中 发 白）
-          ;; The tiles are arranged in the order of color above
+          ;; The tiles are arranged in hand in the order of colores above
           ;; Aka is the indicator of AKA DORA only for NRM
           )
   
