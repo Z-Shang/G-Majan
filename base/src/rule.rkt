@@ -4,43 +4,38 @@
 
 (define same-color?
   (lambda (lst)
-    (andmap (lambda (a) (eq? (hai-color a) (hai-color (car lst))))
-            lst)))
+    (andmap (lambda (a) (eq? (hai-color a) (hai-color (car lst)))) lst)))
 
 (define shuntsu? 
   (lambda (lst-of-hai)
-    (if (and (= (length lst-of-hai) 3)
+    (and (= (length lst-of-hai) 3)
              (same-color? lst-of-hai) 
              (= (foldl (lambda (a r) (+ r (hai-number a))) 0 lst-of-hai) 
                 (* 3 (second (sort (map (lambda (a) (hai-number a)) lst-of-hai) <))))
              (local ((define lst (map (lambda (a) (hai-number a)) lst-of-hai)))
-                    (= (- (apply max lst) (apply min lst)) 2)))
-      #t
-      #f)))
+                    (= (- (apply max lst) (apply min lst)) 2)))))
 
 (define koutsu?
   (lambda (lst-of-hai)
-    (if (and (= (length lst-of-hai) 3)
+    (and (= (length lst-of-hai) 3)
              (same-color? lst-of-hai)
-             (andmap (lambda (a) (= (hai-number a) (hai-number (car lst-of-hai)))) lst-of-hai))
-      #t
-      #f)))
+             (andmap (lambda (a) (= (hai-number a) (hai-number (car lst-of-hai)))) lst-of-hai))))
 
 (define kantsu?
   (lambda (lst-of-hai)
-    (if (and (= (length lst-of-hai) 4)
-             (same-color? lst-of-hai)
-             (andmap (lambda (a) (= (hai-number a) (hai-number (car lst-of-hai)))) lst-of-hai))
-      #t
-      #f)))
+    (and (= (length lst-of-hai) 4)
+         (same-color? lst-of-hai)
+         (andmap (lambda (a) (= (hai-number a) (hai-number (car lst-of-hai)))) lst-of-hai))))
 
 (define toitsu?
   (lambda (lst-of-hai)
-    (if (and (= (length lst-of-hai) 2)
-             (same-color? lst-of-hai)
-             (= (hai-number (car lst-of-hai)) (hai-number (second lst-of-hai))))
-      #t
-      #f)))
+    (and (= (length lst-of-hai) 2)
+         (same-color? lst-of-hai)
+         (= (hai-number (car lst-of-hai)) (hai-number (second lst-of-hai))))))
+
+(define yaochuu?
+  (lambda (hai)
+    (or (= (hai-number hai) 1) (= (hai-number hai) 9))))
 
 (provide (all-defined-out))
 
