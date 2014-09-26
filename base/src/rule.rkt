@@ -4,9 +4,13 @@
 
 (define same-color?
   (lambda (lst)
-    (andmap (lambda (a) (eq? (hai-color a) (hai-color (car lst)))) lst)))
+    (andmap (lambda (a) (= (hai-color a) (hai-color (car lst)))) lst)))
 
-(define shuntsu? 
+(define same-number?
+  (lambda (lst)
+    (andmap (lambda (a) (= (hai-number a) (hai-number (car lst)))) lst)))
+
+(define shuntsu?          ;;顺子
   (lambda (lst-of-hai)
     (and (= (length lst-of-hai) 3)
              (same-color? lst-of-hai) 
@@ -15,25 +19,25 @@
              (local ((define lst (map (lambda (a) (hai-number a)) lst-of-hai)))
                     (= (- (apply max lst) (apply min lst)) 2)))))
 
-(define koutsu?
-  (lambda (lst-of-hai)
-    (and (= (length lst-of-hai) 3)
-             (same-color? lst-of-hai)
-             (andmap (lambda (a) (= (hai-number a) (hai-number (car lst-of-hai)))) lst-of-hai))))
-
-(define kantsu?
-  (lambda (lst-of-hai)
-    (and (= (length lst-of-hai) 4)
-         (same-color? lst-of-hai)
-         (andmap (lambda (a) (= (hai-number a) (hai-number (car lst-of-hai)))) lst-of-hai))))
-
-(define toitsu?
+(define toitsu?           ;;对子
   (lambda (lst-of-hai)
     (and (= (length lst-of-hai) 2)
          (same-color? lst-of-hai)
-         (= (hai-number (car lst-of-hai)) (hai-number (second lst-of-hai))))))
+         (same-number? lst-of-hai))))
+         
+(define koutsu?           ;;刻子
+  (lambda (lst-of-hai)
+    (and (= (length lst-of-hai) 3)
+             (same-color? lst-of-hai)
+             (same-number? lst-of-hai))))
 
-(define yaochuu?
+(define kantsu?           ;;杠子
+  (lambda (lst-of-hai)
+    (and (= (length lst-of-hai) 4)
+         (same-color? lst-of-hai)
+         (same-number? lst-of-hai))))
+
+(define yaochuu?          ;;幺九
   (lambda (hai)
     (or (= (hai-number hai) 1) (= (hai-number hai) 9))))
 
