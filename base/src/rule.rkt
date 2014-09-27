@@ -13,23 +13,22 @@
 (define shuntsu?          ;;顺子
   (lambda (lst-of-hai)
     (and (= (length lst-of-hai) 3)
-             (same-color? lst-of-hai) 
-             (= (foldl (lambda (a r) (+ r (hai-number a))) 0 lst-of-hai) 
-                (* 3 (second (sort (map (lambda (a) (hai-number a)) lst-of-hai) <))))
-             (local ((define lst (map (lambda (a) (hai-number a)) lst-of-hai)))
-                    (= (- (apply max lst) (apply min lst)) 2)))))
+         (same-color? lst-of-hai) 
+         (local ((define lst (sort (map (lambda (a) (hai-number a)) lst-of-hai) >)))
+                (and (= (- (car lst) (last lst)) 2)
+                     (= (* 3 (second lst)) (apply + lst)))))))
 
 (define toitsu?           ;;对子
   (lambda (lst-of-hai)
     (and (= (length lst-of-hai) 2)
          (same-color? lst-of-hai)
          (same-number? lst-of-hai))))
-         
+
 (define koutsu?           ;;刻子
   (lambda (lst-of-hai)
     (and (= (length lst-of-hai) 3)
-             (same-color? lst-of-hai)
-             (same-number? lst-of-hai))))
+         (same-color? lst-of-hai)
+         (same-number? lst-of-hai))))
 
 (define kantsu?           ;;杠子
   (lambda (lst-of-hai)
