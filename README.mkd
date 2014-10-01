@@ -6,3 +6,5 @@ A real Mahjong game (Japanese Riichi Mahjong 日本リーチ麻雀 and Chinese N
 Rules:
 
 [Japanese Riichi Mahjong](./RuleN.mkd)
+
+[Chinese National Standard Mahjong](./RuleC.mkd)
